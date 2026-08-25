@@ -1,0 +1,69 @@
+name: Change request
+description: Request a change to an existing solution
+labels: ["change request"]
+body:
+  - type: textarea
+    id: change
+    attributes:
+      label: Requested change
+      description: What should be different once this is done.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Business reason
+      description: >-
+        Why this is needed. The process it supports, what it costs today, or what
+        prompted the request. This is what makes the change reviewable later.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: How it works today
+      description: Current behaviour, and any workaround in use.
+    validations:
+      required: false
+
+  - type: input
+    id: area
+    attributes:
+      label: Affected area
+      description: Module, object, report, or integration this touches, if known.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Blocking daily operations
+        - Needed for an upcoming deadline
+        - Wanted, no fixed date
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Done when
+      description: How you or the customer will confirm this is finished.
+      placeholder: |
+        - [ ]
+        - [ ]
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: >-
+        Anything else relevant. Screenshots, sample data, or constraints such as
+        environments and cutover timing. Redact credentials and personal data first.
+    validations:
+      required: false
